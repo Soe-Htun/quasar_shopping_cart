@@ -21,7 +21,6 @@
 
               <q-btn icon="remove" 
               unelevated
-              :disable="disable"
               @click="reduceQty(item.id)"
               dense round size="sm"
               color="grey-9"/>
@@ -31,12 +30,17 @@
         <q-space />
         <q-btn 
           @click="removeItem(item.id)"
-         flat icon="close" />
+          flat icon="close" />
       </q-card-section>
     </q-card>
     </div>
     
-    <q-btn v-if="cart.length" no-caps class="bg-green full-width q-mt-md" > Checkout ($ {{ totalPrice }}) </q-btn> 
+    <q-btn unelevated
+      v-if="cart.length" no-caps
+      class="bg-green full-width q-mt-md text-white" 
+    > 
+      Checkout ($ {{ totalPrice }})
+    </q-btn> 
   </div>
 </template>
 
@@ -45,7 +49,6 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data() {
     return {
-      disable: false
     }
   },
   computed: {

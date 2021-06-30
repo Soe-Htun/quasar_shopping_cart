@@ -1,58 +1,65 @@
 <template>
-  <q-layout view="lHh Lpr lFf" container style="height:100vh">
-    <q-header class="bg-white">
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          color="black"
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title class="text-black">
-          Matcher
-        </q-toolbar-title>
-        <q-btn flat no-caps @click="goCart" class="text-black">Cart ({{ totalQty }})</q-btn>
+  <q-layout view="lHh Lpr lFf" container style="height:100vh" class="rounded-borders">
+    <q-header class="bg-indigo">
+      <q-toolbar class="justify-between">
+        <q-btn flat icon="menu" />
+        <div class="text-h6">Welcome Shopping</div>
+        <q-btn round flat icon="shopping_cart"/>
       </q-toolbar>
     </q-header>
 
-    <q-page-container class="bg-grey-3">
-      <div class="row">
-        <div class="col-md-8 col-sm-12 col-lg-9">
-          <ProductList />
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-3">
-          <Cart />
-        </div>
-      </div>
+    <q-page-container>
+      <q-tab-panels v-model="tab" animated>
+        <q-tab-panel name="home">
+          <Home />
+        </q-tab-panel>
+        <q-tab-panel name="cart">
+          <ShoppingCart />
+        </q-tab-panel>
+      </q-tab-panels>
     </q-page-container>
+
+    <q-footer class="bg-indigo">
+      <q-tabs
+        v-model="tab"
+        dense no-caps
+        align="justify"
+        class="text-grey bg-indigo"
+        active-color="white"
+        :breakpoint="0"
+      >
+        <q-tab
+          label="Home"
+          name="home" icon="home" />
+        <q-tab
+          label="Cart" 
+          name="cart" icon="shopping_cart" >
+          <q-badge v-for="item in cart" :key="item.id"
+            color="red" floating>
+            {{item.qty}}
+          </q-badge>
+        </q-tab>
+      </q-tabs>
+    </q-footer>
   </q-layout>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import Cart from '../pages/Cart.vue'
-import ProductList from '../pages/ProductList.vue'
+import Home from 'src/pages/Home.vue';
+import ShoppingCart from 'src/pages/ShoppingCart.vue'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   components: {
-    Cart,
-    ProductList
+    Home,
+    ShoppingCart
   },
-  toggleLeftDrawer: false,
+  data() {
+    return {
+      tab: "home",
+    }
+  },
   computed: {
     ...mapGetters(["cart"]),
-    totalQty() {
-      return this.cart.reduce((a,b) => a + b.qty, 0)
-    }
-  },
-  methods: {
-    goCart() {
-      this.$router.push("/cart")
-      console.log("hello");
-    }
-  },
+  }
 }
 </script>

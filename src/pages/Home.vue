@@ -1,155 +1,43 @@
 <template>
-  <q-page>
     <div class="q-pa-md">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="text-h6">The Dashboard</div>
-          </div>
-        </div>
+    <div class="row q-col-gutter-md">
+      <div class="col-6 col-md-4 col-sm-12" v-for="item in products" :key="item.id">
+        <q-card class="my-card">
+         <img :src="item.imgUrl" alt="item.imgUrl" />
+          <q-card-section>
+            <div class="text-subtitle1 text-capitalize text-center ellipsis"> {{item.title}}</div>
+            <div class="text-subtitle1 text-bold text-center"> $ {{item.price}}</div>
+            <div class="column items-center">
+
+            <q-btn label="Add to cart" color="indigo"
+              @click="addToCart(item)" 
+              no-caps unelevated
+              class="q-px-md q-mt-sm"
+            />
+            </div>
+          </q-card-section>
+        </q-card>
       </div>
     </div>
-
-    <div class="container q-pa-md">
-      <div class="row q-col-gutter-md">
-        <div class="col-md-4 col-sm-6 col-6">
-          <q-card class="my-card">
-            <q-img src="./../assets/kabras.jpg">
-              <q-chip v-ripple color="warning"> -30% </q-chip>
-            </q-img>
-
-            <q-card-section>
-              <div>
-                <div class="float-right">
-                  <q-btn unelevated color="indigo"
-                    size="12px"
-                   icon="shopping_cart" round/>
-                </div>
-                <div class="text-subtitle1 text-capitalize ellipsis">product name</div>
-              </div> 
-            </q-card-section>
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle1 text-bold">KSh 217</div>
-               <div class="text-caption text-grey">KSh 500</div>
-            </q-card-section>
-          </q-card>
-        </div>
-        <div class="col-md-4 col-sm-6 col-6">
-          <q-card class="my-card">
-            <q-img src="./../assets/kabras.jpg">
-              <q-chip v-ripple color="warning"> -30% </q-chip>
-            </q-img>
-
-            <q-card-section>
-              <div>
-                <div class="float-right">
-                  <q-btn unelevated color="indigo"
-                    size="12px"
-                   icon="shopping_cart" round/>
-                </div>
-                <div class="text-subtitle1 text-capitalize ellipsis">product name</div>
-              </div> 
-            </q-card-section>
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle1 text-bold">KSh 217</div>
-               <div class="text-caption text-grey">KSh 500</div>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-6">
-          <q-card class="my-card">
-            <q-img src="./../assets/kabras.jpg">
-              <q-chip v-ripple color="warning"> -30% </q-chip>
-            </q-img>
-
-            <q-card-section>
-              <div>
-                <div class="float-right">
-                  <q-btn unelevated color="indigo"
-                    size="12px"
-                   icon="shopping_cart" round/>
-                </div>
-                <div class="text-subtitle1 text-capitalize ellipsis">product name</div>
-              </div> 
-            </q-card-section>
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle1 text-bold">KSh 217</div>
-               <div class="text-caption text-grey">KSh 500</div>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-6">
-          <q-card class="my-card">
-            <q-img src="./../assets/kabras.jpg">
-              <q-chip v-ripple color="warning"> -30% </q-chip>
-            </q-img>
-
-            <q-card-section>
-              <div>
-                <div class="float-right">
-                  <q-btn unelevated color="indigo"
-                    size="12px"
-                   icon="shopping_cart" round/>
-                </div>
-                <div class="text-subtitle1 text-capitalize ellipsis">product name</div>
-              </div> 
-            </q-card-section>
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle1 text-bold">KSh 217</div>
-               <div class="text-caption text-grey">KSh 500</div>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-6">
-          <q-card class="my-card">
-            <q-img src="./../assets/kabras.jpg">
-              <q-chip v-ripple color="warning"> -30% </q-chip>
-            </q-img>
-
-            <q-card-section>
-              <div>
-                <div class="float-right">
-                  <q-btn unelevated color="indigo"
-                    size="12px"
-                   icon="shopping_cart" round/>
-                </div>
-                <div class="text-subtitle1 text-capitalize ellipsis">product name</div>
-              </div> 
-            </q-card-section>
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle1 text-bold">KSh 217</div>
-               <div class="text-caption text-grey">KSh 500</div>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-6">
-          <q-card class="my-card">
-            <q-img src="./../assets/kabras.jpg">
-              <q-chip v-ripple color="warning"> -30% </q-chip>
-            </q-img>
-
-            <q-card-section>
-              <div>
-                <div class="float-right">
-                  <q-btn unelevated color="indigo"
-                    size="12px"
-                   icon="shopping_cart" round/>
-                </div>
-                <div class="text-subtitle1 text-capitalize ellipsis">product name</div>
-              </div> 
-            </q-card-section>
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle1 text-bold">KSh 217</div>
-               <div class="text-caption text-grey">KSh 500</div>
-            </q-card-section>
-          </q-card>
-        </div>
-      </div>
-    </div>
-  </q-page>
-
+  </div>
 </template>
+
+<script>
+import {mapGetters, mapActions} from 'vuex'
+export default {
+  data() {
+    return {
+      
+    }
+  },
+  computed: {
+    ...mapGetters(["products"])
+  },
+  methods: {
+    ...mapActions(["getProducts", "addToCart"])
+  },
+  created() {
+    this.getProducts();
+  },
+}
+</script>
