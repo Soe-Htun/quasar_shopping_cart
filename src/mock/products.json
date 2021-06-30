@@ -1,0 +1,45 @@
+[
+  {
+    "id" : 1,
+    "title" : "Dell XPS 13 9380",
+    "price" : 1080,
+    "imgUrl" : "https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/xps_notebooks/13_9380/global_spi/notebook-xps-13-9380-whl-silver-campaign-hero-504x350-ng.psd?fmt=jpg&wid=570&hei=400",
+    "img" : "./../assets/nexus.jpg"
+
+  },
+  {
+    "id" : 2,
+    "title" : "Apple 13 inch MacBook Air",
+    "price" : 799,
+    "imgUrl" : "https://images-na.ssl-images-amazon.com/images/I/41trZrXSdnL._AC_SX450_.jpg",
+    "img" : "./../assets/brookside.jpg"
+  },
+  {
+    "id" : 3,
+    "title" : "Lenovo IdeaPad 3",
+    "price" : 450,
+    "imgUrl" : "https://www.lenovo.com/medias/IdeaPad-Duet-3i-88IPD301447-725x515.png?context=bWFzdGVyfHJvb3R8MjE5MDY0fGltYWdlL3BuZ3xoYzUvaDFlLzExNjIwNzk5MzgxNTM0LnBuZ3w4ZDRiYjkzMTI1NWI3NzQwNjMyZDVmMjBkNjAwZGNmN2E1MzFlMTMwZmJhOTE3YmIyY2UyYzdmZmY2NzcwYzY2",
+    "img" : "../../assets/kabras.jpg"
+  },
+  {
+    "id" : 4,
+    "title" : "Acer Spin 3 Convertible Laptop",
+    "price" : 699,
+    "imgUrl" : "https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/laptops/Acer_Spin_3_SP314_51_372M/Acer_Spin_3_SP314_51_372M_L_1.jpg",
+    "img" : "require('./../assets/ganier.jpg')"
+  },
+  {
+    "id" : 5,
+    "title" : "CHUWI HeroBook Pro 14.1 inch",
+    "price" : 269,
+    "imgUrl" : "https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/laptops/Chuwi_HeroBook_Plus/Chuwi_HeroBook_Plus_L_1.jpg",
+    "img" : "require('~/assets/kcc.jpg')"
+  },
+  {
+    "id" : 6,
+    "title" : "Lenovo IdeaPad C340 14",
+    "price" : 479,
+    "imgUrl" : "https://d2pa5gi5n2e1an.cloudfront.net/webp/global/images/product/laptops/Lenovo_Ideapad_C340_14/Lenovo_Ideapad_C340_14_L_1.jpg",
+    "img" : "require('./../assets/fashion.jpg')"
+  }
+]
